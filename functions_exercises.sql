@@ -33,8 +33,12 @@ SELECT last_name
 FROM employees
 WHERE last_name LIKE '%q%';
 
-SELECT hire_date, last_name, birth_date
+SELECT CONCAT(first_name, ' ', last_name)
+FROM employees
+WHERE last_name LIKE 'E%'
+AND last_name LIKE 'E%';
+
+SELECT DATEDIFF(NOW(),`hire_date`) AS days
 FROM employees
 WHERE hire_date BETWEEN '1990-01-01' and '1999-12-31'
-AND birth_date LIKE '%-12-25'
-ORDER BY birth_date ASC, hire_date DESC;
+AND birth_date LIKE '%-12-25';
